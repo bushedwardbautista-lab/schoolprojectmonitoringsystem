@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login System</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            text-align: center;
+            margin-top: 100px;
+        }
+        .login-box {
+            background: white
+            ;
+            padding: 20px;
+            width: 300px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-box">
+    <h2>Welcome! </h2>
+    <h2>School Project Monitoring</h2>
+    <h2>System</h2>
+    <input type="text" id="userID" placeholder="Enter ID"><br>
+    <input type="password" id="password" placeholder="Enter Password"><br>
+    <button onclick="login()">Login</button>
+    <p id="message"></p>
+</div>
+
+<script>
+    // Stored account
+    const storedID = "admin";
+    const storedPassword = "1234";
+
+    function login() {
+        const userID = document.getElementById("userID").value;
+        const password = document.getElementById("password").value;
+
+        if (userID === storedID && password === storedPassword) {
+            document.getElementById("message").innerHTML = "Login Successful ";
+            document.getElementById("message").style.color = "green";
+        } else {
+            document.getElementById("message").innerHTML = "Invalid ID or Password ";
+            document.getElementById("message").style.color = "red";
+        }
+    }
+</script>
+
+</body>
+</html>
